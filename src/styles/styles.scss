@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "./variables";
+@import "../LandingPage/landingPage";
+@import "../components/navbar";
+
+
+* {
+  margin: 0px;
+}
+body{
+  background: $dark-blue;
+}
+@font-face {
+    font-family: clashDisplay;
+    src: url(../assets/ClashDisplay_Complete/ClashDisplay_Complete/Fonts/Variable/ClashDisplay-Variable.ttf);
+}
+.container {
+  max-width: 1100px;
+  margin: auto;
+  width: 95%;
+  font-family: clashDisplay;
+}

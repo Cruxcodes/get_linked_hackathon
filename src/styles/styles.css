@@ -1,0 +1,354 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+.header {
+  color: white;
+}
+.header .top {
+  text-align: end;
+  font-family: Montserrat !important;
+  font-weight: 700;
+  line-height: normal;
+  font-size: 2em;
+}
+.header .top .revolution {
+  position: relative;
+}
+.header .top .revolution::after {
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  content: "";
+  background: url(../assets/underline.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  bottom: -20px;
+  left: 0px;
+}
+.header .main h2 {
+  font-size: 3em;
+  margin: 0px;
+  line-height: 30px;
+}
+.header .main h2 span {
+  color: #d434fe;
+}
+.header .main__left .image {
+  display: flex;
+  align-items: center;
+}
+.header .main__left .image img {
+  height: fit-content;
+  object-fit: cover;
+}
+
+.navigation {
+  border-bottom: 1px solid rgba(73, 73, 73, 0.477);
+}
+
+.navbar {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0px;
+  box-sizing: border-box;
+}
+.navbar a {
+  text-decoration: none;
+}
+.navbar__logo {
+  overflow: hidden;
+}
+.navbar__logo span {
+  font-weight: 500;
+  font-size: 2em;
+}
+.navbar__logo .get {
+  color: white;
+  position: relative;
+}
+.navbar__logo .get::after {
+  content: "get";
+  position: absolute;
+  color: #d434fe;
+  right: 0px;
+  top: -100px;
+  transition: 0.4s ease-in-out;
+}
+.navbar__logo .link {
+  color: #d434fe;
+  position: relative;
+}
+.navbar__logo .link::after {
+  content: "linked";
+  position: absolute;
+  color: white;
+  right: 0px;
+  bottom: -100px;
+  transition: 0.4s ease-in-out;
+}
+.navbar__logo .logo:hover .get::after {
+  top: -1.6px;
+}
+.navbar__logo .logo:hover .link::after {
+  bottom: 1.2px;
+}
+.navbar__links {
+  display: flex;
+  align-items: center;
+}
+.navbar__links ul li {
+  display: inline;
+  position: relative;
+  margin: 0px 20px;
+  transition: 0.5s;
+}
+.navbar__links ul li .active {
+  color: white;
+}
+.navbar__links ul li a {
+  transition: 0.8s;
+}
+.navbar__links ul li::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: white;
+  left: 0px;
+  bottom: -5px;
+  transition: 0.5s;
+}
+.navbar__links ul li:hover {
+  color: #d434fe;
+}
+.navbar__links ul li:hover::after {
+  width: 100%;
+}
+.navbar__links ul li.active {
+  background: #000;
+}
+.navbar__mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.navbar__mobile div {
+  width: 40px;
+  height: 10%;
+  background: white;
+}
+.navbar .animate__mobile {
+  position: relative;
+}
+.navbar .animate__mobile div {
+  background: white;
+}
+.navbar .animate__mobile .first {
+  position: absolute;
+  animation: mobile 1s ease-in-out 1;
+  transform: rotate(-45deg);
+}
+@keyframes mobile {
+  0% {
+    position: absolute;
+    top: 0px;
+  }
+  50% {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+  100% {
+    transform: translateY(-50%) rotate(-45deg);
+  }
+}
+.navbar .animate__mobile .third {
+  position: absolute;
+  animation: third 1s ease-in-out 1;
+  transform: rotate(45deg);
+}
+@keyframes third {
+  0% {
+    position: absolute;
+    bottom: 0px;
+  }
+  50% {
+    position: absolute;
+    bottom: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+  100% {
+    transform: translateY(-50%) rotate(45deg);
+  }
+}
+.navbar .animate__mobile .second {
+  opacity: 0;
+  animation: second 1s ease-in-out 1;
+}
+@keyframes second {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.navbar .reset__mobile {
+  position: relative;
+}
+.navbar .reset__mobile .first {
+  animation: reverse__mobile 1.3s ease-in-out 1;
+  transform: rotate(0deg);
+  top: 0px;
+}
+@keyframes reverse__mobile {
+  0% {
+    position: absolute;
+    top: 50%;
+    transform: rotate(-45deg);
+  }
+  50% {
+    transform: translateY(-50%);
+  }
+  100% {
+    position: absolute;
+    top: 0px;
+    opacity: 0;
+  }
+}
+.navbar .reset__mobile .third {
+  animation: reverse__third 1.4s ease-in-out 1;
+  transform: rotate(0deg);
+}
+@keyframes reverse__third {
+  0% {
+    position: absolute;
+    bottom: 50%;
+    transform: rotate(-45deg);
+  }
+  50% {
+    transform: translateY(-50%);
+  }
+  100% {
+    position: absolute;
+    transform: rotate(0deg);
+    opacity: 0;
+    bottom: 0px;
+  }
+}
+.navbar .reset__mobile .second {
+  opacity: 1;
+  animation: second 1.3s ease-in-out 1;
+}
+@keyframes second {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.mobile {
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  position: fixed;
+  font-family: "Inter", sans-serif !important;
+  font-weight: 500;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4117647059);
+  overflow: hidden;
+}
+.mobile.hidden {
+  opacity: 0;
+  pointer-events: none; /* Prevent interaction with hidden menu */
+}
+.mobile .navbar__links {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.mobile .navbar__links ul {
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.mobile .navbar__links ul .register {
+  padding: 20px 50px;
+  background-image: linear-gradient(270deg, #903aff 0%, #fe34b9 100%);
+}
+.mobile .navbar__links ul li {
+  margin: 20px 0px;
+  font-size: 1.3em;
+  animation: comeIn 2s ease-in-out 1;
+}
+.mobile .navbar__links ul li a {
+  text-decoration: none;
+  color: white;
+}
+@keyframes comeIn {
+  from {
+    opacity: 0;
+    transform: translateY(200%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.register {
+  list-style: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: fit-content;
+  padding: 10px 25px;
+  background-image: linear-gradient(130deg, #903aff, #903aff, #d434fe);
+  border-radius: 5px;
+  background-size: 200%;
+  background-position: 0% 0%;
+  transition: 0.5s;
+}
+@media screen and (max-width: 900px) {
+  .register {
+    margin-left: 2vh;
+  }
+}
+.register:hover {
+  background-position: 100% 100%;
+  box-shadow: 5px 8px 30px rgb(65, 65, 65);
+}
+.register a {
+  text-decoration: none;
+  transition: 0.8s;
+  color: white;
+}
+.register:hover a {
+  color: white;
+}
+.register::after {
+  display: none;
+}
+
+* {
+  margin: 0px;
+}
+
+body {
+  background: #150e28;
+}
+
+@font-face {
+  font-family: clashDisplay;
+  src: url(../assets/ClashDisplay_Complete/ClashDisplay_Complete/Fonts/Variable/ClashDisplay-Variable.ttf);
+}
+.container {
+  max-width: 1100px;
+  margin: auto;
+  width: 95%;
+  font-family: clashDisplay;
+}/*# sourceMappingURL=styles.css.map */

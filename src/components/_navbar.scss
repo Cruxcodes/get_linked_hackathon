@@ -1,0 +1,320 @@
+.navigation {
+  border-bottom: 1px solid rgba(73, 73, 73, 0.477);
+}
+.navbar {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0px;
+  box-sizing: border-box;
+  a {
+    text-decoration: none;
+  }
+  &__logo {
+    overflow: hidden;
+
+    span {
+      font-weight: 500;
+      font-size: 2em;
+    }
+
+    .get {
+      color: white;
+      position: relative;
+      &::after {
+        content: "get";
+        position: absolute;
+        color: $light-purple;
+        right: 0px;
+        top: -100px;
+        transition: 0.4s ease-in-out;
+      }
+    }
+
+    .link {
+      color: $light-purple;
+      position: relative;
+      &::after {
+        content: "linked";
+        position: absolute;
+        color: white;
+        right: 0px;
+        bottom: -100px;
+        transition: 0.4s ease-in-out;
+      }
+    }
+
+    .logo:hover .get::after {
+      top: -1.6px;
+    }
+    .logo:hover .link::after {
+      bottom: 1.2px;
+    }
+  }
+  &__links {
+    display: flex;
+    align-items: center;
+    ul {
+      li {
+        display: inline;
+        position: relative;
+        margin: 0px 20px;
+        transition: 0.5s;
+        .active {
+          color: white;
+        }
+        a {
+          transition: 0.8s;
+          // color: white;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          width: 0%;
+          height: 2px;
+          background: white;
+          left: 0px;
+          bottom: -5px;
+          transition: 0.5s;
+        }
+
+        &:hover {
+          color: $light-purple;
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
+      }
+      li.active {
+        background: #000;
+      }
+    }
+  }
+
+  &__mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    div {
+      width: 40px;
+      height: 10%;
+      background: white;
+      // margin: 10px;
+    }
+  }
+
+  .animate__mobile {
+    position: relative;
+    div {
+      background: white;
+    }
+    .first {
+      position: absolute;
+      animation: mobile 1s ease-in-out 1;
+      transform: rotate(-45deg);
+    }
+    @keyframes mobile {
+      0% {
+        position: absolute;
+        top: 0px;
+      }
+      50% {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) rotate(-45deg);
+      }
+      100% {
+        transform: translateY(-50%) rotate(-45deg);
+      }
+    }
+
+    .third {
+      position: absolute;
+      animation: third 1s ease-in-out 1;
+      transform: rotate(45deg);
+    }
+
+    @keyframes third {
+      0% {
+        position: absolute;
+        bottom: 0px;
+      }
+      50% {
+        position: absolute;
+        bottom: 50%;
+        transform: translateY(-50%) rotate(45deg);
+      }
+      100% {
+        transform: translateY(-50%) rotate(45deg);
+      }
+    }
+
+    .second {
+      opacity: 0;
+      animation: second 1s ease-in-out 1;
+    }
+
+    @keyframes second {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+  }
+  .reset__mobile {
+    position: relative;
+    .first {
+      // position: absolute;
+      animation: reverse__mobile 1.3s ease-in-out 1;
+      transform: rotate(0deg);
+      top: 0px;
+    }
+    @keyframes reverse__mobile {
+      0% {
+        position: absolute;
+        top: 50%;
+        transform: rotate(-45deg);
+      }
+      50% {
+        transform: translateY(-50%);
+      }
+      100% {
+        position: absolute;
+        top: 0px;
+        opacity: 0;
+      }
+    }
+
+    .third {
+      // position: absolute;
+      animation: reverse__third 1.4s ease-in-out 1;
+      transform: rotate(0deg);
+    }
+
+    @keyframes reverse__third {
+      0% {
+        position: absolute;
+        bottom: 50%;
+        transform: rotate(-45deg);
+      }
+      50% {
+        transform: translateY(-50%);
+      }
+      100% {
+        position: absolute;
+        transform: rotate(0deg);
+        opacity: 0;
+        bottom: 0px;
+      }
+    }
+
+    .second {
+      opacity: 1;
+      animation: second 1.3s ease-in-out 1;
+    }
+
+    @keyframes second {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.mobile {
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  &.hidden {
+    opacity: 0;
+    pointer-events: none; /* Prevent interaction with hidden menu */
+  }
+
+  position: fixed;
+  font-family: $Inter !important;
+  font-weight: 500;
+  height: 100%;
+  width: 100%;
+  background: #00000069;
+  overflow: hidden;
+
+  .navbar__links {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    ul {
+      padding: 0px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .register {
+        padding: 20px 50px;
+        background-image: $primary-color;
+      }
+      li {
+        margin: 20px 0px;
+        font-size: 1.3em;
+        animation: comeIn 2s ease-in-out 1;
+        a {
+          text-decoration: none;
+          color: white;
+        }
+        @keyframes comeIn {
+          from {
+            opacity: 0;
+            transform: translateY(200%);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0%);
+          }
+        }
+      }
+    }
+  }
+}
+
+.register {
+  list-style: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: fit-content;
+  padding: 10px 25px;
+  background-image: linear-gradient(
+    130deg,
+    $dark-purple,
+    $dark-purple,
+    $light-purple
+  );
+  border-radius: 5px;
+  background-size: 200%;
+  background-position: 0% 0%;
+  transition: 0.5s;
+  @media screen and (max-width: 900px) {
+    margin-left: 2vh;
+  }
+  &:hover {
+    background-position: 100% 100%;
+    box-shadow: 5px 8px 30px rgb(65, 65, 65);
+  }
+  a {
+    text-decoration: none;
+    transition: 0.8s;
+    color: white;
+  }
+  &:hover a {
+    color: white;
+  }
+  &::after {
+    display: none;
+  }
+}
