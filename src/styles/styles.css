@@ -31,6 +31,22 @@
 .header .main h2 span {
   color: #d434fe;
 }
+.header .main .register {
+  margin: 30px 0px;
+}
+.header .main__left {
+  padding: 20vh 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url("../assets/bgImage.png"), url("../assets/bgImage2.png");
+  background-size: 100%;
+  object-fit: contain;
+  background-position: right bottom;
+  background-blend-mode: luminosity;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 .header .main__left .image {
   display: flex;
   align-items: center;
@@ -38,6 +54,10 @@
 .header .main__left .image img {
   height: fit-content;
   object-fit: cover;
+}
+.header .main__left p {
+  width: 50%;
+  margin: 10px 0px;
 }
 
 .navigation {

@@ -25,25 +25,45 @@
     }
   }
 
-  .main{
-    h2{
-        font-size: 3em;
-        margin: 0px;
-        line-height: 30px;
+  .main {
+    h2 {
+      font-size: 3em;
+      margin: 0px;
+      line-height: 30px;
 
-        span{
-            color: $light-purple;
-        }
+      span {
+        color: $light-purple;
+      }
     }
-    &__left{
-        .image{
-            display: flex;
-            align-items: center;
-            img{
-                height: fit-content;
-                object-fit: cover;
-            }
+    .register{
+      margin: 30px 0px;
+    }
+    &__left {
+      padding: 20vh 0px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .image {
+        display: flex;
+        align-items: center;
+        img {
+          height: fit-content;
+          object-fit: cover;
         }
+      }
+      p{
+        width: 50%;
+        margin: 10px 0px;
+      }
+      background-image: url("../assets/bgImage.png"),
+        url("../assets/bgImage2.png"),
+       ;
+      background-size: 100%;
+      object-fit: contain;
+      background-position: right bottom;
+      background-blend-mode: luminosity;
+      background-size: contain;
+      background-repeat: no-repeat;
     }
   }
 }

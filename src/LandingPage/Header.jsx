@@ -13,19 +13,21 @@ function Header() {
       </div>
       <main className="header__main main">
         <div className="main__left">
-          <h2>getlinked Tech</h2>
-          <div className="image">
-            <h2 className="image__text">
-              Hackathon <span>1.0</span>
-            </h2>
-            <img src={chain} alt="" />
-            <img src={explosion} alt="" />
+          <div className="info">
+            <h2>getlinked Tech</h2>
+            <div className="image">
+              <h2 className="image__text">
+                Hackathon <span>1.0</span>
+              </h2>
+              <img src={chain} alt="" />
+              <img src={explosion} alt="" />
+            </div>
+            <p>
+              Participate in getlinked tech Hackathon 2023 stand a chance to win
+              a Big prize
+            </p>
+            <Button link={"/register"} />
           </div>
-          <p>
-            Participate in getlinked tech Hackathon 2023 stand a chance to win a
-            Big prize
-          </p>
-          <Button link={'/register'}/>
         </div>
       </main>
     </div>
