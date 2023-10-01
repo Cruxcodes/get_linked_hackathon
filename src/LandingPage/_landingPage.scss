@@ -6,7 +6,14 @@
     font-family: Montserrat !important;
     font-weight: 700;
     line-height: normal;
+    font-style: italic;
     font-size: 2em;
+
+    @media screen and (max-width: 572px) {
+      font-size: 1.2em;
+      text-align: center;
+      margin: 20px 0px 0px 0px;
+    }
     .revolution {
       position: relative;
 
@@ -26,16 +33,26 @@
   }
 
   .main {
+    @media screen and (max-width: 572px) {
+      font-size: 1.2em;
+      text-align: center;
+      h2 {
+        font-size: 1.2em;
+      }
+    }
     h2 {
       font-size: 3em;
       margin: 0px;
       line-height: 30px;
 
+      @media screen and (max-width: 572px) {
+        font-size: 1.5em;
+      }
       span {
         color: $light-purple;
       }
     }
-    .register{
+    .register {
       margin: 30px 0px;
     }
     &__left {
@@ -43,6 +60,15 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      @media screen and (max-width: 572px) {
+        text-align: center;
+        font-size: 1.1em;
+        height: 70vh;
+        justify-content: start;
+        padding: 0px;
+        padding: 5vh 0px;
+        // padding: 10vh 0px;
+      }
       .image {
         display: flex;
         align-items: center;
@@ -51,19 +77,54 @@
           object-fit: cover;
         }
       }
-      p{
+      @media screen and (max-width: 572px) {
+        .image {
+          justify-content: center;
+          img {
+            width: 40px;
+            height: 40px;
+          }
+        }
+      }
+      .register {
+        @media screen and (max-width: 572px) {
+          margin: 20px auto;
+        }
+      }
+      p {
         width: 50%;
         margin: 10px 0px;
+
+        @media screen and (max-width: 572px) {
+          margin: 20px auto;
+          width: 70%;
+        }
       }
       background-image: url("../assets/bgImage.png"),
-        url("../assets/bgImage2.png"),
-       ;
+        url("../assets/bgImage2.png");
       background-size: 100%;
       object-fit: contain;
       background-position: right bottom;
-      background-blend-mode: luminosity;
+      background-blend-mode: exclusion;
       background-size: contain;
       background-repeat: no-repeat;
+
+      .timer {
+        span {
+          font-family: $unica;
+          font-size: 2em;
+          font-weight: 500;
+          font-family: Unica One;
+
+          & > span {
+            font-size: 0.5em;
+            font-weight: 400;
+          }
+        }
+        span + span {
+          margin-left: 20px;
+        }
+      }
     }
   }
 }

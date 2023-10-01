@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types"; // Import PropTypes
 
-function Button({ func, link, margin=false }) {
+function Button({ func, link}) {
   return (
-    <li className="register" style={margin?{ marginLeft: "10vh" }:{marginLeft:""}}>
+    <li className="register">
       <NavLink to={link} onClick={func}>
         Register
       </NavLink>
@@ -14,7 +14,7 @@ function Button({ func, link, margin=false }) {
 Button.propTypes = {
   func: PropTypes.func,
   link: PropTypes.string,
-  margin: PropTypes.bool,
+  // margin: PropTypes.bool,
 };
 
 export default Button;

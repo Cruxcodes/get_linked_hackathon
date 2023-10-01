@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Unica+One&display=swap");
+@font-face {
+  font-family: clashDisplay;
+  src: url(../assets/ClashDisplay_Complete/ClashDisplay_Complete/Fonts/Variable/ClashDisplay-Variable.ttf);
+}
 .header {
   color: white;
 }
@@ -7,7 +12,15 @@
   font-family: Montserrat !important;
   font-weight: 700;
   line-height: normal;
+  font-style: italic;
   font-size: 2em;
+}
+@media screen and (max-width: 572px) {
+  .header .top {
+    font-size: 1.2em;
+    text-align: center;
+    margin: 20px 0px 0px 0px;
+  }
 }
 .header .top .revolution {
   position: relative;
@@ -23,10 +36,24 @@
   bottom: -20px;
   left: 0px;
 }
+@media screen and (max-width: 572px) {
+  .header .main {
+    font-size: 1.2em;
+    text-align: center;
+  }
+  .header .main h2 {
+    font-size: 1.2em;
+  }
+}
 .header .main h2 {
   font-size: 3em;
   margin: 0px;
   line-height: 30px;
+}
+@media screen and (max-width: 572px) {
+  .header .main h2 {
+    font-size: 1.5em;
+  }
 }
 .header .main h2 span {
   color: #d434fe;
@@ -43,9 +70,19 @@
   background-size: 100%;
   object-fit: contain;
   background-position: right bottom;
-  background-blend-mode: luminosity;
+  background-blend-mode: exclusion;
   background-size: contain;
   background-repeat: no-repeat;
+}
+@media screen and (max-width: 572px) {
+  .header .main__left {
+    text-align: center;
+    font-size: 1.1em;
+    height: 70vh;
+    justify-content: start;
+    padding: 0px;
+    padding: 5vh 0px;
+  }
 }
 .header .main__left .image {
   display: flex;
@@ -55,9 +92,42 @@
   height: fit-content;
   object-fit: cover;
 }
+@media screen and (max-width: 572px) {
+  .header .main__left .image {
+    justify-content: center;
+  }
+  .header .main__left .image img {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media screen and (max-width: 572px) {
+  .header .main__left .register {
+    margin: 20px auto;
+  }
+}
 .header .main__left p {
   width: 50%;
   margin: 10px 0px;
+}
+@media screen and (max-width: 572px) {
+  .header .main__left p {
+    margin: 20px auto;
+    width: 70%;
+  }
+}
+.header .main__left .timer span {
+  font-family: "Unica One", cursive;
+  font-size: 2em;
+  font-weight: 500;
+  font-family: Unica One;
+}
+.header .main__left .timer span > span {
+  font-size: 0.5em;
+  font-weight: 400;
+}
+.header .main__left .timer span + span {
+  margin-left: 20px;
 }
 
 .navigation {
@@ -362,12 +432,8 @@ body {
   background: #150e28;
 }
 
-@font-face {
-  font-family: clashDisplay;
-  src: url(../assets/ClashDisplay_Complete/ClashDisplay_Complete/Fonts/Variable/ClashDisplay-Variable.ttf);
-}
 .container {
-  max-width: 1100px;
+  max-width: 1300px;
   margin: auto;
   width: 95%;
   font-family: clashDisplay;

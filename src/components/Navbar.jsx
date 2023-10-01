@@ -10,7 +10,7 @@ function Navbar() {
   useEffect(() => {
     window.addEventListener("resize", () => {
       setScreenSize(window.innerWidth);
-      if (screenSize > 800) {
+      if (screenSize > 812) {
         setShowNav(false);
       }
     });
@@ -32,7 +32,7 @@ function Navbar() {
               <span className="link">linked</span>
             </NavLink>
           </div>
-          {screenSize > 800 ? (
+          {screenSize > 812 ? (
             <div className="navbar__links">
               <ul>
                 <li>
@@ -45,7 +45,9 @@ function Navbar() {
                   <NavLink to="/faqs">FAQs</NavLink>
                 </li>
                 <li>
-                  <NavLink to="/contact">Contact</NavLink>
+                  <NavLink to="/contact" style={{ marginRight: "5vh" }}>
+                    Contact
+                  </NavLink>
                 </li>
                 <li className="register">
                   <NavLink to="/register">Register</NavLink>
@@ -68,7 +70,7 @@ function Navbar() {
           )}
         </div>
       </nav>
-      {showNav && screenSize < 800 && (
+      {showNav && screenSize < 812 && (
         <MobileNav hideMobileMenu={hideMobileMenu} showNav={showNav} />
       )}
       {/* <div>{props.children}</div> */}
@@ -97,14 +99,14 @@ function MobileNav({ hideMobileMenu, showNav }) {
           <li>
             <NavLink to="/faqs" onClick={hideMobileMenu}>
               FAQs
-            </NavLink>
+            </NavLink>  
           </li>
-          <li >
+          <li>
             <NavLink to="/contact" onClick={hideMobileMenu}>
               Contact
             </NavLink>
           </li>
-          <Button func={hideMobileMenu} margin={true} link={'/register'}/>
+          <Button func={hideMobileMenu} link={"/register"} />
         </ul>
       </div>
     </div>
