@@ -4,6 +4,15 @@
   font-family: clashDisplay;
   src: url(../assets/ClashDisplay_Complete/ClashDisplay_Complete/Fonts/Variable/ClashDisplay-Variable.ttf);
 }
+.headerMain {
+  background-image: url("../assets/bgImage.png"), url("../assets/bgImage2.png");
+  background-size: 100%;
+  object-fit: contain;
+  background-position: 90% bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .header {
   color: white;
 }
@@ -55,6 +64,11 @@
     font-size: 1.5em;
   }
 }
+@media screen and (max-width: 400px) {
+  .header .main h2 {
+    font-size: 1.4em;
+  }
+}
 .header .main h2 span {
   color: #d434fe;
 }
@@ -66,13 +80,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-image: url("../assets/bgImage.png"), url("../assets/bgImage2.png");
-  background-size: 100%;
-  object-fit: contain;
-  background-position: right bottom;
-  background-blend-mode: exclusion;
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 @media screen and (max-width: 572px) {
   .header .main__left {
@@ -109,11 +116,18 @@
 .header .main__left p {
   width: 50%;
   margin: 10px 0px;
+  font-size: 1.1em;
 }
 @media screen and (max-width: 572px) {
   .header .main__left p {
     margin: 20px auto;
     width: 70%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .header .main__left p {
+    margin: 20px auto;
+    width: 100%;
   }
 }
 .header .main__left .timer span {
@@ -128,6 +142,65 @@
 }
 .header .main__left .timer span + span {
   margin-left: 20px;
+}
+
+.intro {
+  padding: 5vh 0px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+@media screen and (max-width: 768px) {
+  .intro {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+.intro_image {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  .intro_image {
+    width: 100%;
+  }
+}
+.intro_image img {
+  object-fit: contain;
+  width: 90%;
+  height: 90%;
+}
+.intro_info {
+  width: 45%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  .intro_info {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .intro_info p {
+    font-size: 1.2em;
+  }
+}
+.intro_info h3 {
+  color: white;
+  font-size: 2em;
+}
+.intro_info h3 + h3 {
+  color: #d434fe;
+  margin-bottom: 20px;
+}
+.intro_info p {
+  color: white;
+  letter-spacing: 1px;
+  line-height: 1.5em;
 }
 
 .navigation {

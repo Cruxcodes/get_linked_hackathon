@@ -3,7 +3,7 @@ import chain from "../assets/chain.png";
 import explosion from "../assets/explosion.png";
 import Button from "../components/Button";
 
-function Header() {
+export function Header() {
   const targetDate = new Date("2023-12-31T23:59:59"); // Set your target date and time here
   const [timeRemaining, setTimeRemaining] = useState(
     calculateTimeRemaining(targetDate)
@@ -60,61 +60,61 @@ function Header() {
   }
 
   return (
-    <div className="container header">
-      <div className="top">
-        <p>
-          Igniting a Revolution in{" "}
-          <span className="revolution"> HR Innovation </span>
-        </p>
-      </div>
-      <main className="header__main main">
-        <div className="main__left">
-          <div className="info">
-            <h2>getlinked Tech</h2>
-            <div className="image">
-              <h2 className="image__text">
-                Hackathon <span>1.0</span>
-              </h2>
-              <img src={chain} alt="" />
-              <img src={explosion} alt="" />
-            </div>
-            <p>
-              Participate in getlinked tech Hackathon 2023 stand a chance to win
-              a Big prize
-            </p>
-            <Button link={"/register"} />
-            <div className="timer">
-              {timeRemaining.days > 1 ? (
-                <span className="days">
-                  {timeRemaining.days}
-                  <span className="tag">D</span>
+    <div className="header headerMain">
+      <div className="container header">
+        <div className="top">
+          <p>
+            Igniting a Revolution in{" "}
+            <span className="revolution"> HR Innovation </span>
+          </p>
+        </div>
+        <main className="header__main main">
+          <div className="main__left">
+            <div className="info">
+              <h2>getlinked Tech</h2>
+              <div className="image">
+                <h2 className="image__text">
+                  Hackathon <span>1.0</span>
+                </h2>
+                <img src={chain} alt="" />
+                <img src={explosion} alt="" />
+              </div>
+              <p>
+                Participate in getlinked tech Hackathon 2023 stand a chance to
+                win a Big prize
+              </p>
+              <Button link={"/register"} />
+              <div className="timer">
+                {timeRemaining.days > 1 ? (
+                  <span className="days">
+                    {timeRemaining.days}
+                    <span className="tag">D</span>
+                  </span>
+                ) : (
+                  ""
+                )}
+
+                <span className="hours">
+                  {timeRemaining.hours > 12
+                    ? timeRemaining.hours
+                    : `0${timeRemaining.hours}`}
+
+                  <span className="tag">H</span>
                 </span>
-              ) : (
-                ""
-              )}
-
-              <span className="hours">
-                {timeRemaining.hours > 12
-                  ? timeRemaining.hours
-                  : `0${timeRemaining.hours}`}
-
-                <span className="tag">H</span>
-              </span>
-              <span className="minutes">
-                {timeRemaining.minutes > 0
-                  ? timeRemaining.minutes
-                  : `0${timeRemaining.minutes}`}{" "}
-                <span className="tag">H</span>
-              </span>
-              <span className="secs">
-                {timeRemaining.seconds} <span className="tag">S</span>
-              </span>
+                <span className="minutes">
+                  {timeRemaining.minutes > 0
+                    ? timeRemaining.minutes
+                    : `0${timeRemaining.minutes}`}{" "}
+                  <span className="tag">H</span>
+                </span>
+                <span className="secs">
+                  {timeRemaining.seconds} <span className="tag">S</span>
+                </span>
+              </div>
             </div>
           </div>
-        </div>
-      </main>
+        </main>
+      </div>
     </div>
   );
 }
-
-export default Header;
