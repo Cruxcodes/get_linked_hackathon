@@ -14,8 +14,7 @@ export function Header() {
 
     if (isRunning && timeRemaining.total > 0) {
       intervalId = setInterval(() => {
-        setTimeRemaining(calculateTimeRemaining(targetDate));
-        console.log(("helo"))
+        setTimeRemaining(calculateTimeRemaining(targetDate)); 
       }, 1000); // Update timer every 1 second
     } else {
       clearInterval(intervalId);
